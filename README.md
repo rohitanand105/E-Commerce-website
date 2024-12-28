@@ -1,149 +1,19 @@
-**E-Commerce Platform**
+**E-Commerce Platform
+**
+This project is an e-commerce platform developed using Spring Boot and follows the microservice architecture. It comprises multiple services, including User, Product, Order, and Payment services, each independently deployed and managed. The platform provides features like microservice-based modularity and scalability, RESTful APIs for inter-service communication, secure payment handling, role-based authentication and authorization, and comprehensive logging and exception handling.
 
-An e-commerce platform built using Spring Boot and following the microservice architecture. The project comprises multiple services such as User, Product, Order, and Payment services, each independently deployed and managed.
+The platform’s architecture is designed around the microservice model, where each service focuses on a specific domain. Communication between these services is achieved using REST APIs. The major components include the User Service for handling user-related operations such as authentication, registration, and profile management; the Product Service for managing product listings, inventory, and categories; the Order Service for processing orders, tracking their statuses, and maintaining order history; and the Payment Service for integrating with payment gateways and managing transactions. Optionally, a gateway service can route requests to the appropriate services, and a centralized configuration server can handle service configurations.
 
-Table of Contents
+The technologies utilized include Java as the core programming language, Spring Boot for service development, Spring Cloud for microservice tools, Hibernate/JPA for database interactions, MySQL as the database, Postman for API testing, Docker for containerization, and Swagger for API documentation. The project also emphasizes future scalability and enhancements, including the addition of centralized configuration management, caching with Redis, enhanced security using OAuth2 or JWT, and scaling services using Kubernetes.
 
-Features
+The platform consists of several modules:
 
-Architecture
+User Service handles endpoints for user registration, authentication, and retrieving user details.
 
-Technologies Used
+Product Service manages endpoints for fetching, adding, and updating product details.
 
-Modules
+Order Service processes orders, retrieves order details, and updates order statuses.
 
-Setup and Installation
+Payment Service integrates payment processing and retrieves payment information.
 
-API Endpoints
-
-Future Enhancements
-
-Features
-
-Microservice architecture for modularity and scalability.
-
-RESTful APIs for inter-service communication.
-
-Database integration with JPA and Hibernate.
-
-Secure payment handling.
-
-Role-based authentication and authorization.
-
-Comprehensive logging and exception handling.
-
-Architecture
-
-The platform follows a microservice architecture, where each service is responsible for a specific domain. The communication between services is achieved using REST APIs. The architecture includes the following components:
-
-User Service: Handles user authentication, registration, and profile management.
-
-Product Service: Manages product listings, inventory, and categories.
-
-Order Service: Processes orders, tracks order statuses, and maintains order history.
-
-Payment Service: Integrates with payment gateways to handle transactions.
-
-A gateway service can also be added to route requests to appropriate services, and a centralized configuration server can manage service configurations.
-
-Technologies Used
-
-Java: Core programming language.
-
-Spring Boot: Framework for building services.
-
-Spring Cloud: Tools for microservice development.
-
-Hibernate/JPA: ORM for database interactions.
-
-MySQL: Relational database.
-
-Postman: API testing tool.
-
-Docker: Containerization.
-
-Swagger: API documentation.
-
-Modules
-
-1. User Service
-
-Endpoints:
-
-POST /users/register: Register a new user.
-
-POST /users/login: Authenticate user credentials.
-
-GET /users/{id}: Fetch user details.
-
-2. Product Service
-
-Endpoints:
-
-GET /products: Fetch all products.
-
-POST /products: Add a new product.
-
-PUT /products/{id}: Update product details.
-
-3. Order Service
-
-Endpoints:
-
-POST /orders: Place a new order.
-
-GET /orders/{id}: Get order details.
-
-PUT /orders/{id}/status: Update order status.
-
-4. Payment Service
-
-Endpoints:
-
-POST /payments: Process payment for an order.
-
-GET /payments/{id}: Fetch payment details.
-
-Setup and Installation
-
-Clone the Repository:
-
-git clone https://github.com/rohitanand105/ecommerce-platform.git
-cd ecommerce-platform
-
-Set Up the Database:
-
-Install MySQL and create databases for each service.
-
-Update database configurations in application.properties files for respective services.
-
-Build and Run Services:
-
-mvn clean install
-java -jar target/{service-name}.jar
-
-Access APIs:
-
-Use Postman or any API testing tool to interact with services.
-
-Docker Support (Optional):
-
-Build Docker images for each service and deploy using Docker Compose.
-
-API Endpoints
-
-Detailed API documentation can be accessed via Swagger UI:
-
-http://localhost:{port}/swagger-ui.html
-
-Future Enhancements
-
-Implement a gateway service using Spring Cloud Gateway.
-
-Add centralized configuration management.
-
-Introduce caching with Redis.
-
-Enhance security with OAuth2 or JWT.
-
-Scale services using Kubernetes.
+To set up and run the platform, the repository can be cloned, databases for each service can be configured in MySQL, and services can be built and executed using Maven commands. Optionally, Docker support is provided to build images and deploy services using Docker Compose. API endpoints are documented via Swagger UI for easy testing and integration. Future enhancements aim to improve performance and security while introducing modern infrastructure practices for greater scalability.
